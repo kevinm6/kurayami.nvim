@@ -6,12 +6,12 @@
 
 ---
 
-##  Requirements
+## 📄 Requirements
 
 > Neovim >= 7.0
 
 
-##  Installation
+## ⬇ Installation
 
 [Lazy](https://github.com/wbthomason/packer.nvim)
 
