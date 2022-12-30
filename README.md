@@ -17,7 +17,7 @@
 
 ```lua
   {
-   "kevinm6/knvim.nvim",
+   "kevinm6/knvim-theme.nvim",
     lazy = false,          -- don't lazy load
     priority = 100,        -- give high priority to be loaded before others plugin
     config = function()
@@ -32,6 +32,6 @@
 [Packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'kevinm6/knvim.nvim'
+use 'kevinm6/knvim-theme.nvim'
 ```
 
