@@ -2,10 +2,8 @@
 --  File         : plugins.lua
 --  Description  : 3rd part plugins palette
 --  Author       : Kevin
---  Last Modified: 30 Dec 2022, 08:59
+--  Last Modified: 31 Dec 2022, 10:23
 -------------------------------------
-
--- TODO: add support for Lazy Package-Manager
 
 local base = require "knvim.base"
 
@@ -14,6 +12,7 @@ local plugins = {
   AlphaHeader = { fg = "#74D15C" },
   AlphaButtons = { link = "Keyword" },
   AlphaFooter = { link = "Comment" },
+
   -- Nvim-Tree
   NvimTreeSymlink = { link = "Function" },
   NvimTreeFolderName = { link = "Normal" },
@@ -27,7 +26,8 @@ local plugins = {
   NvimTreeSpecialFile = { fg = "#afaf00", bold = true, italic = true },
   NvimTreeImageFile = { link = "Label" },
   NvimTreeIndentMarker = { link = "Comment" },
-  -- nvim-treesitter
+
+  -- Nvim-Treesitter
   ["@none"] = { default = true },
   ["@error"] = {},
   ["@text.title"] = base.Title,
@@ -91,64 +91,14 @@ local plugins = {
   ["@codeBlock"] = {},
   ["@todo"] = base.Todo,
   -- ["@spell"] = { underline = true },
-  -- Telescope.nvim
-  TelescopeSelection = { link = "PmenuSel" },
-  TelescopeSlectionCaret = { link = "PmenuSbar" },
-  TelescopeMultiSelection = { reverse = true },
-  TelescopeNormal = { link = "Normal" },
-  TelescopeBorder = { link = "WinSeparator" },
-  TelescopePromptBorder = { link = "WinSeparator" },
-  TelescopeResultsBorder = { link = "WinSeparator" },
-  TelescopePreviewBorder = { link = "WinSeparator" },
-  TelescopeMatching = { link = "CmpItemAbbrMatch" },
-  TelescopePromptPrefix = { fg = "#36FF5A" },
-  TelescopePrompt = { link = "TelescopeNormal" },
-  -- gitsigns.nvim
-  GitSignsAdd = base.k_themeGreenSign,
-  GitSignsChange = base.k_themeAquaSign,
-  GitSignsDelete = base.k_themeRedSign,
-  GitSignsCurrentLineBlame = base.NonText,
-  -- nvim-cmp
-  CmpItemAbbr = { fg = "#DCDCDC" },
-  CmpItemKind = { link = "Type" },
-  CmpItemAbbrMatch = { fg = "#40CC7C" },
-  CmpItemMenu = { link = "Special" },
-  CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE", strikethrough = true },
-  CmpItemAbbrMatchFuzzy = { fg = base.aqua },
-  CmpItemKindClass = { link = "SpecialChar" },
-  CmpItemKindConstructor = { link = "Label" },
-  CmpItemKindField = { link = "Constant" },
-  CmpItemKindFile = { link = "Directory" },
-  CmpItemKindFolder = { link = "Directory" },
-  CmpItemKindFunction = { link = "Function" },
-  CmpItemKindMethod = { link = "Function" },
-  CmpItemKindInterface = { link = "Identifier" },
-  CmpItemKindKeyword = { link = "Keyword" },
-  CmpItemKindSnippet = { link = "ShellMode"},
-  CmpItemKindText = { link = "String" },
-  CmpItemKindValue = { link = "Value" },
-  CmpItemKindVariable = { link = "Type" },
-  CmpItemKindProperty = { link = "Define" },
-  CmpItemKindEvent = { link = "Ignore" },
-  CmpItemKindEnum = { link = "Float" },
-  CmpItemKindConstant = { link = "Constant" },
-  CmpItemKindReference = { link = "Identifier" },
-  CmpItemKindStruct = { link = "Structure" },
-  CmpItemKindModule = { link = "Statement" },
-  CmpItemKindOperator = { link = "Operator" },
-  CmpItemKindUnit = { link = "Tag" },
-  CmpItemKindEnumMember = { link = "Type" },
-  CmpItemKindColor = { link = "Constant" },
-  CmpItemKindTypeParameter = { link = "Type" },
-  -- LuaSnip
-  LuasnipChoiceNode = { fg = "#ff8800", bg = "grey15" },
-  LuasnipInsertNode = { fg = "#4fc1ff", bg = "grey15" },
+
   -- LSP
   LspCodeLens = base.k_themeGray,
   LspReferenceText = { bg = "#3c3c3c" },
   LspReferenceWrite = { fg = "#F1F1F1", bg = "#015A60" },
   LspReferenceRead = { bg = "#3c3c3c" },
   FloatBorder = { fg = "#3D3D40", bg = "#2c2c2c" },
+
   -- Diagnostic
   DiagnosticError = { fg = "#f44747" },
   DiagnosticsWarning = { fg = "#ff8800" },
@@ -181,6 +131,63 @@ local plugins = {
   DiagnosticVirtualTextWarn = base.k_themeYellow,
   DiagnosticVirtualTextInfo = base.k_themeBlue,
   DiagnosticVirtualTextHint = base.k_themeAqua,
+
+  -- Telescope.nvim
+  TelescopeSelection = { link = "PmenuSel" },
+  TelescopeSlectionCaret = { link = "PmenuSbar" },
+  TelescopeMultiSelection = { reverse = true },
+  TelescopeNormal = { link = "Normal" },
+  TelescopeBorder = { link = "WinSeparator" },
+  TelescopePromptBorder = { link = "WinSeparator" },
+  TelescopeResultsBorder = { link = "WinSeparator" },
+  TelescopePreviewBorder = { link = "WinSeparator" },
+  TelescopeMatching = { link = "CmpItemAbbrMatch" },
+  TelescopePromptPrefix = { fg = "#36FF5A" },
+  TelescopePrompt = { link = "TelescopeNormal" },
+
+  -- GitSigns.nvim
+  GitSignsAdd = base.k_themeGreenSign,
+  GitSignsChange = base.k_themeAquaSign,
+  GitSignsDelete = base.k_themeRedSign,
+  GitSignsCurrentLineBlame = base.NonText,
+
+  -- Nvim-Cmp
+  CmpItemAbbr = { fg = "#DCDCDC" },
+  CmpItemKind = { link = "Type" },
+  CmpItemAbbrMatch = { fg = "#40CC7C" },
+  CmpItemMenu = { link = "Special" },
+  CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE", strikethrough = true },
+  CmpItemAbbrMatchFuzzy = { fg = base.aqua },
+  CmpItemKindClass = { link = "SpecialChar" },
+  CmpItemKindConstructor = { link = "Label" },
+  CmpItemKindField = { link = "Constant" },
+  CmpItemKindFile = { link = "Directory" },
+  CmpItemKindFolder = { link = "Directory" },
+  CmpItemKindFunction = { link = "Function" },
+  CmpItemKindMethod = { link = "Function" },
+  CmpItemKindInterface = { link = "Identifier" },
+  CmpItemKindKeyword = { link = "Keyword" },
+  CmpItemKindSnippet = { link = "ShellMode"},
+  CmpItemKindText = { link = "String" },
+  CmpItemKindValue = { link = "Value" },
+  CmpItemKindVariable = { link = "Type" },
+  CmpItemKindProperty = { link = "Define" },
+  CmpItemKindEvent = { link = "Ignore" },
+  CmpItemKindEnum = { link = "Float" },
+  CmpItemKindConstant = { link = "Constant" },
+  CmpItemKindReference = { link = "Identifier" },
+  CmpItemKindStruct = { link = "Structure" },
+  CmpItemKindModule = { link = "Statement" },
+  CmpItemKindOperator = { link = "Operator" },
+  CmpItemKindUnit = { link = "Tag" },
+  CmpItemKindEnumMember = { link = "Type" },
+  CmpItemKindColor = { link = "Constant" },
+  CmpItemKindTypeParameter = { link = "Type" },
+
+  -- LuaSnip
+  LuasnipChoiceNode = { fg = "#ff8800", bg = "grey15" },
+  LuasnipInsertNode = { fg = "#4fc1ff", bg = "grey15" },
+
   -- WhichKey
   WhichKey = { link = "Function" },
   WhichKeyGroup = { link = "Type" },
@@ -188,6 +195,37 @@ local plugins = {
   WhichKeyDesc = { link = "Identifier" },
   WhichKeyFloat = { bg = "#2c2c2c" },
   WhichKeyValue = { link = "Comment" },
+
+  -- Lazy (Package Manager)
+  LazyButton = { link = "CursorLine" },
+  LazyButtonActive = { link = "Visual" },
+  LazyComment = { link = "Comment" },
+  LazyCommit = base.Special,
+  LazyCommitIssue = base.Number,
+  LazyCommitScope = base.Italic,
+  LazyCommitType = base.Title,
+  LazyDir = { link = "@text.reference" },
+  LazyH1 = { link = "IncSearch" },
+  LazyH2 = { link = "Bold" },
+  LazyNoCond = { link = "DiagnosticWarn" },
+  LazyNormal = { link = "NormalFloat" },
+  LazyProgressDone = { link = "Constant" },
+  LazyProgressTodo = { link = "LineNr" },
+  LazyProp = { link = "Conceal" },
+  LazyReasonCmd = base.Operator,
+  LazyReasonEvent = base.Constant,
+  LazyReasonFt = base.Character,
+  LazyReasonKeys = base.Statement,
+  LazyReasonPlugin = base.Special,
+  LazyReasonRuntime = { link = "@macro" },
+  LazyReasonSource = base.Character,
+  LazyReasonStart = { link = "@field" },
+  LazySpecial = { link = "@punctuation.special" },
+  LazyTaskError = base.ErrorMsg,
+  LazyTaskOutput = base.MsgArea,
+  LazyUrl = { link = "@text.reference" },
+  LazyValue = { link = "@string" },
+
   -- Navic
   NavicText = { link = "Comment" },
   NavicSeparator = { link = "Comment" },
@@ -219,10 +257,12 @@ local plugins = {
   NavicIconsOperator = { link = "CmpItemKindOperator" },
   NavicIconsTypeParameter = { link = "CmpItemKindTypeParameter" },
   NavicIconsText = { link = "CmpItemKindText" },
+
   -- Ufo (Folding)
   UfoPreviewSbar = { link = "PmenuSbar" },
   UfoPreviewThumb = { link = "PmenuThumb" },
   UfoFoldedEllipsis = { link = "Comment" },
+
   -- Noice
   NoiceCmdline = { link = "MsgArea" },
   NoiceCmdlineIcon = { link = "DiagnosticSignInfo" },
@@ -262,6 +302,7 @@ local plugins = {
   NoiceSplit = { link = "NormalFloat" },
   NoiceSplitBorder = { link = "FloatBorder" },
   NoiceVirtualText = { link = "DiagnosticVirtualTextInfo" },
+
   -- Indent-blankline
   IndentBlanklineContextStart = { sp = "#6c6c6c", underline = true, nocombine = true },
   IndentBlanklineContextChar = { fg = "#6c6c6c" },
