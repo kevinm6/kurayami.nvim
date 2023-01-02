@@ -2,7 +2,7 @@
 --  File         : plugins.lua
 --  Description  : 3rd part plugins palette
 --  Author       : Kevin
---  Last Modified: 31 Dec 2022, 10:23
+--  Last Modified: 02 Jan 2023, 09:14
 -------------------------------------
 
 local base = require "knvim.base"
@@ -204,7 +204,7 @@ local plugins = {
   LazyCommitIssue = base.Number,
   LazyCommitScope = base.Italic,
   LazyCommitType = base.Title,
-  LazyDir = { link = "@text.reference" },
+  LazyDir = { link = "Directory" },
   LazyH1 = { link = "IncSearch" },
   LazyH2 = { link = "Bold" },
   LazyNoCond = { link = "DiagnosticWarn" },
