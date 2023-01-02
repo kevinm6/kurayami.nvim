@@ -2,7 +2,7 @@
 --  File         : plugins.lua
 --  Description  : 3rd part plugins palette
 --  Author       : Kevin
---  Last Modified: 02 Jan 2023, 09:14
+--  Last Modified: 02 Jan 2023, 17:37
 -------------------------------------
 
 local base = require "knvim.base"
@@ -302,6 +302,12 @@ local plugins = {
   NoiceSplit = { link = "NormalFloat" },
   NoiceSplitBorder = { link = "FloatBorder" },
   NoiceVirtualText = { link = "DiagnosticVirtualTextInfo" },
+
+  -- Null-Ls
+  NullLsInfoHeader = base.Define,
+  NullLsInfoTitle = base.Title,
+  NullLsInfoBorder = base.WinSeparator,
+  NullLsInfoSources = base.Directory,
 
   -- Indent-blankline
   IndentBlanklineContextStart = { sp = "#6c6c6c", underline = true, nocombine = true },
