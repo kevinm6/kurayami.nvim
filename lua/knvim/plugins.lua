@@ -2,7 +2,7 @@
 --  File         : plugins.lua
 --  Description  : 3rd part plugins palette
 --  Author       : Kevin
---  Last Modified: 02 Jan 2023, 17:37
+--  Last Modified: 12 Jan 2023, 09:24
 -------------------------------------
 
 local base = require "knvim.base"
@@ -138,7 +138,7 @@ local plugins = {
   TelescopeMultiSelection = { reverse = true },
   TelescopeNormal = { link = "Normal" },
   TelescopeBorder = { link = "WinSeparator" },
-  TelescopePromptBorder = { link = "WinSeparator" },
+  TelescopePromptBorder = base.Title,
   TelescopeResultsBorder = { link = "WinSeparator" },
   TelescopePreviewBorder = { link = "WinSeparator" },
   TelescopeMatching = { link = "CmpItemAbbrMatch" },
