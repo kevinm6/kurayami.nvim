@@ -2,7 +2,7 @@
 --  File         : plugins.lua
 --  Description  : 3rd part plugins palette
 --  Author       : Kevin
---  Last Modified: 12 Jan 2023, 09:24
+--  Last Modified: 24 Feb 2023, 09:16
 -------------------------------------
 
 local base = require "knvim.base"
@@ -134,8 +134,8 @@ local plugins = {
 
   -- Telescope.nvim
   TelescopeSelection = { link = "PmenuSel" },
-  TelescopeSlectionCaret = { link = "PmenuSbar" },
-  TelescopeMultiSelection = { reverse = true },
+  TelescopeSelectionCaret = { fg = "#015A60" },
+  TelescopeMultiSelection = { bold = true, fg = "Gold1" },
   TelescopeNormal = { link = "Normal" },
   TelescopeBorder = { link = "WinSeparator" },
   TelescopePromptBorder = base.Title,
@@ -144,6 +144,10 @@ local plugins = {
   TelescopeMatching = { link = "CmpItemAbbrMatch" },
   TelescopePromptPrefix = { fg = "#36FF5A" },
   TelescopePrompt = { link = "TelescopeNormal" },
+  TelescopeResultsDiffAdd = { link = "DiffAdd" },
+  TelescopeResultsDiffChange = { link = "DiffChange" },
+  TelescopeResultsDiffDelete = { link = "DiffDelete" },
+  TelescopeResultsDiffUntracked = { link = "Ignore" },
 
   -- GitSigns.nvim
   GitSignsAdd = base.k_themeGreenSign,

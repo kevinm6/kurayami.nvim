@@ -2,7 +2,7 @@
 --  File         : base.lua
 --  Description  : base colors palette for knvim colorscheme
 --  Author       : Kevin
---  Last Modified: 30 Dec 2022, 08:59
+--  Last Modified: 07 Feb 2023, 19:02
 -------------------------------------
 
 local colors = require "knvim.colors"
@@ -249,9 +249,9 @@ local base_group = {
 	gitcommitDiscardedFile = { fg = red },
 
 	-- checkhealth
-	healthError = { fg = bg0, bg = red },
-	healthSuccess = { fg = bg0, bg = green },
-	healthWarning = { fg = bg0, bg = yellow },
+	healthError = { bg = bg0, fg = red },
+	healthSuccess = { bg = bg0, fg = green },
+	healthWarning = { bg = bg0, fg = yellow },
 }
 
 return base_group

@@ -1,1 +1,1 @@
-require "knvim".load()
+require "knvim".setup()

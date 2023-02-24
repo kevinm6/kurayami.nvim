@@ -2,15 +2,15 @@
 -- File         : init.lua
 -- Description  : knvim theme for Neovim
 -- Author       : Kevin
--- Last Modified: 29 Dec 2022, 23:16
+-- Last Modified: 24 Feb 2023, 09:19
 -------------------------------------
 
 local M = {}
 
 function M.setup()
-  package.loaded["plugins.knvim"] = nil
-  package.loaded["plugins.knvim.palette"] = nil
-  package.loaded["plugins.knvim.config"] = nil
+  package.loaded["knvim"] = nil
+  package.loaded["knvim.palette"] = nil
+  package.loaded["knvim.config"] = nil
 
   local plugins = require "knvim.plugins"
   local langs = require "knvim.languages"
