@@ -2,7 +2,7 @@
 --  File         : base.lua
 --  Description  : base colors palette for knvim colorscheme
 --  Author       : Kevin
---  Last Modified: 07 Feb 2023, 19:02
+--  Last Modified: 30 Mar 2023, 18:59
 -------------------------------------
 
 local colors = require "knvim.colors"
@@ -173,7 +173,7 @@ local base_group = {
 	Keyword = { fg = "#00ff87" },
 	Exception = { fg = "#af0000" },
 	Repeat = { fg = "#00ff87" },
-	Underlined = { fg = "#00a0d0" },
+	Underlined = { underline = true },
 	Question = { fg = "#00875f" },
 	SpecialKey = { fg = "#ffafd7" },
 	Special = { fg = "#ffff87" },
@@ -181,7 +181,7 @@ local base_group = {
 	Macro = { fg = "#ff54ad" },
 	PreProc = { fg = "#d75f00" },
 	PreCondit = { fg = "#875f5f" },
-	Tag = { fg = "#ff00ff" },
+	Tag = { fg = "#569CD6" },
 	Delimiter = { fg = "#d7d787" },
 	SpecialComment = { fg = "#6C7986" },
 	Todo = { bg = "#d7ff00", fg = "#ff5f00" },
@@ -199,22 +199,28 @@ local base_group = {
 	EndOfBuffer = { fg = bg0, bg = bg0 },
 
 	Ignore = { fg = "#5f5faf", bold = true },
+  MatchParen = { fg = "#09ddd0" },
 
 	-- Menu
 	WildMenu = { fg = "#161616", bg = "#808000" },
 
 	-- Diff
-	MatchParen = { fg = "#09ddd0" },
-	DiffAdd = { fg = "#005fff" },
-	DiffChange = { fg = "#808000" },
-	DiffDelete = { fg = "#d70000" },
-	DiffText = { fg = "#ff00ff" },
+	DiffAdd = { fg = "#014fff" },
+	DiffChange = { bg = "#2c2c2c" },
+	DiffDelete = { fg = "#ff8080" },
+	DiffText = { fg = "gold" },
 	-- diffAdded = { fg = green },
 	-- diffRemoved = { fg = red },
 	-- diffChanged = { fg = aqua },
 	-- diffFile = { fg = orange },
 	-- diffNewFile = { fg = yellow },
 	-- diffLine = { fg = blue },
+
+--  hi DiffAdd      gui=none    guifg=NONE          guibg=#bada9f
+--  hi DiffChange   gui=none    guifg=NONE          guibg=#e5d5ac
+--  hi DiffDelete   gui=bold    guifg=#ff8080       guibg=#ffb0b0
+--  hi DiffText     gui=none    guifg=NONE          guibg=#8cbee2
+
 	SignColumn = { fg = "#626262", bg = bg0 },
 
 	-- Errors

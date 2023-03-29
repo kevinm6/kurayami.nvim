@@ -2,7 +2,7 @@
 --  File         : plugins.lua
 --  Description  : 3rd part plugins palette
 --  Author       : Kevin
---  Last Modified: 24 Feb 2023, 09:16
+--  Last Modified: 15 Apr 2023, 13:22
 -------------------------------------
 
 local base = require "knvim.base"
@@ -36,7 +36,7 @@ local plugins = {
   ["@text.reference"] = base.Define,
   ["@text.environment"] = base.Typedef,
   ["@text.environment.name"] = base.Type,
-  ["@text.uri"] = base.Underlined,
+  ["@text.uri"] = { fg = "#00fff2"  },
   ["@variable"] = base.k_themeFg1,
   ["@punctuation.delimiter"] = base.Delimiter,
   ["@punctuation.bracket"] = base.Delimiter,
@@ -45,8 +45,8 @@ local plugins = {
   ["@constant.builtin"] = base.Special,
   ["@constant.macro"] = base.Define,
   ["@string"] = base.String,
-  ["@string.regex"] = base.String,
-  ["@string.escape"] = base.SpecialChar,
+  ["@string.regex"] = base.SpellRare,
+  ["@string.escape"] = { fg = "#ff005f" },
   ["@string.special"] = base.SpecialChar,
   ["@character"] = base.Character,
   ["@number"] = base.Number,
@@ -85,7 +85,7 @@ local plugins = {
   -- ["text.danger"] = "TSDanger",
   ["@comment"] = base.Comment,
   ["@structure"] = base.k_themeOrange,
-  ["@tag"] = base.k_themeOrange,
+  ["@tag"] = base.Tag,
   ["@tag.delimiter"] = base.k_themeGreen,
   ["@codeSpan"] = { bg = "#3c3c3c", fg = "#DCDCDC"},
   ["@codeBlock"] = {},
