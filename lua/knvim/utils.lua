@@ -2,7 +2,7 @@
 --  File         : utils.lua
 --  Description  : utilities funcs for colorscheme
 --  Author       : Kevin
---  Last Modified: 20/04/2022 - 09:20
+--  Last Modified: 14 May 2023, 12:14
 -----------------------------------
 
 -- util functions
@@ -20,16 +20,15 @@ M.get_color_from_var = function(color, default, colors)
   return c
 end
 
-M.merge = function(tbls)
-  local source = {}
-  for _, group in pairs(tbls) do
-    for groupName, opts in pairs(group) do
-      source[groupName] = opts
-    end
-  end
-
-  return source
-end
+-- M.merge = function(tbls)
+--   local source = {}
+--   for _, group in pairs(tbls) do
+--     for groupName, opts in pairs(group) do
+--       source[groupName] = opts
+--     end
+--   end
+--   return source
+-- end
 
 M.set_highlights = function(hls)
   for group, settings in pairs(hls) do
