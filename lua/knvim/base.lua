@@ -2,10 +2,10 @@
 --  File         : base.lua
 --  Description  : base colors palette for knvim colorscheme
 --  Author       : Kevin
---  Last Modified: 14 May 2023, 14:36
+--  Last Modified: 03 Jun 2023, 17:42
 -------------------------------------
 
-local colors = require "knvim.colors"
+local colors = require("knvim.colors")
 
 local fg0 = colors.light0
 
@@ -22,29 +22,27 @@ if bg == nil then
 	vim.o.background = bg
 end
 
-
 -- neovim terminal mode colors
-vim.g.terminal_color_0  = "#1c1c1c"        -- black
-vim.g.terminal_color_8  = "#626262"        -- gray
-vim.g.terminal_color_1  = "#bf616a"        -- red
-vim.g.terminal_color_9  = "#b2201f"        -- bright-red
-vim.g.terminal_color_2  = "#00af87"        -- green
-vim.g.terminal_color_10 = "#36f57a"        -- bright-green
-vim.g.terminal_color_3  = "#cecb00"        -- yellow
-vim.g.terminal_color_11 = "#fffd00"        -- bright-yellow
-vim.g.terminal_color_4  = "#158C8A"        -- blue
-vim.g.terminal_color_12 = "#1a8fff"        -- bright-blue
-vim.g.terminal_color_5  = "#B48EAD"        -- purple
-vim.g.terminal_color_13 = "#cb1ed1"        -- bright-purple
-vim.g.terminal_color_6  = "#1a8fff"        -- cyan
-vim.g.terminal_color_14 = "#14ffff"        -- bright-cyan
-vim.g.terminal_color_7  = "#dcdcdc"        -- white
-vim.g.terminal_color_15 = "#ffffff"        -- bright-white
+vim.g.terminal_color_0 = "#1c1c1c" -- black
+vim.g.terminal_color_8 = "#626262" -- gray
+vim.g.terminal_color_1 = "#bf616a" -- red
+vim.g.terminal_color_9 = "#b2201f" -- bright-red
+vim.g.terminal_color_2 = "#00af87" -- green
+vim.g.terminal_color_10 = "#36f57a" -- bright-green
+vim.g.terminal_color_3 = "#cecb00" -- yellow
+vim.g.terminal_color_11 = "#fffd00" -- bright-yellow
+vim.g.terminal_color_4 = "#158C8A" -- blue
+vim.g.terminal_color_12 = "#1a8fff" -- bright-blue
+vim.g.terminal_color_5 = "#B48EAD" -- purple
+vim.g.terminal_color_13 = "#cb1ed1" -- bright-purple
+vim.g.terminal_color_6 = "#1a8fff" -- cyan
+vim.g.terminal_color_14 = "#14ffff" -- bright-cyan
+vim.g.terminal_color_7 = "#dcdcdc" -- white
+vim.g.terminal_color_15 = "#ffffff" -- bright-white
 
 vim.g.colors_name = "k_theme"
 
 local base_group = {
-
 	-- Modes
 	Normal = { fg = "#D0D0D0", bg = colors.dark0 },
 	Visual = { reverse = true },
@@ -52,6 +50,7 @@ local base_group = {
 	VisualNOS = { fg = "#244E7A" },
 
 	WinSeparator = { fg = "#3D3D40" },
+	FloatBorder = { fg = "#3D3D40", bg = "#2c2c2c" },
 
 	ModeMsg = {},
 	MoreMsg = {},
@@ -112,7 +111,7 @@ local base_group = {
 	Boolean = { fg = "#FF5573" },
 	Label = { fg = "#FF8AD8" },
 	Conditional = { fg = "#00ff87" },
-	Identifier = { fg = "#af5f5f" },
+	Identifier = { fg = "#507d8b" },
 	Include = { fg = "#ff0000" },
 	Operator = { fg = "#00ff87" },
 	Define = { fg = "#afaf00" },
@@ -178,6 +177,14 @@ local base_group = {
 	PmenuSel = { fg = "#F1F1F1", bg = "#015A60" },
 	PmenuSbar = { bg = "#262626" },
 	PmenuThumb = { bg = "#3D3D40" },
+
+	-- LSP
+	LspCodeLens = { fg =  colors.gray },
+	LspReferenceText = { bg = "#3c3c3c" },
+	LspCodeLensSeparator = { link = "@comment" },
+	LspReferenceWrite = { fg = "#F1F1F1", bg = "#015A60" },
+	LspReferenceRead = { bg = "#3c3c3c" },
+	LspInfoBorder = { fg = "#3D3D40", bg = "#2c2c2c" },
 
 	-- Spell
 	SpellRare = { fg = purple, underline = true },
