@@ -2,7 +2,7 @@
 --  File         : base.lua
 --  Description  : base colors palette for knvim colorscheme
 --  Author       : Kevin
---  Last Modified: 03 Jun 2023, 17:42
+--  Last Modified: 08 Sep 2023, 18:36
 -------------------------------------
 
 local colors = require("knvim.colors")
@@ -50,7 +50,12 @@ local base_group = {
 	VisualNOS = { fg = "#244E7A" },
 
 	WinSeparator = { fg = "#3D3D40" },
-	FloatBorder = { fg = "#3D3D40", bg = "#2c2c2c" },
+	NormalFloat = { bg = "#1f1f1f" },
+	FloatBorder = { fg = "#3D3D40", bg = "#1e1e1e" },
+
+   TabLine = { bg = "#2c2c2c" },
+   TabLineSel = { fg = "#dcdcdc", bg = "#1e1e1e", bold = true, italic = true },
+   TabLineFill = { bg = "#1c1c1c" },
 
 	ModeMsg = {},
 	MoreMsg = {},
@@ -184,7 +189,12 @@ local base_group = {
 	LspCodeLensSeparator = { link = "@comment" },
 	LspReferenceWrite = { fg = "#F1F1F1", bg = "#015A60" },
 	LspReferenceRead = { bg = "#3c3c3c" },
-	LspInfoBorder = { fg = "#3D3D40", bg = "#2c2c2c" },
+
+	LspInfoFiletype = { link = 'Type' },
+	LspInfoTitle = { fg = "Gold1", bold = true },
+	LspInfoList = { link = 'Function' },
+	LspInfoBorder = { fg = "#3D3D40" },
+	LspInfoTip = { link = 'Comment' },
 
 	-- Spell
 	SpellRare = { fg = purple, underline = true },

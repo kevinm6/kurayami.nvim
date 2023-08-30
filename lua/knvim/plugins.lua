@@ -2,14 +2,14 @@
 --  File         : plugins.lua
 --  Description  : 3rd part plugins palette
 --  Author       : Kevin
---  Last Modified: 10 Jun 2023, 11:38
+--  Last Modified: 04 Sep 2023, 11:26
 -------------------------------------
 
 local base = require("knvim.base")
 
 local P = {
 	-- Alpha
-	AlphaHeader = { fg = "#74D15C" },
+	AlphaHeader = { fg = "#016A60" },
 	AlphaButtons = { link = "Keyword" },
 	AlphaFooter = { link = "Comment" },
 
@@ -111,7 +111,7 @@ local P = {
 
 	-- Diagnostic
 	DiagnosticError = { fg = "#f44747" },
-	DiagnosticInfo = { fg = "#ff8800" },
+	DiagnosticInfo = { fg = "#00ffaa" },
 	DiagnosticWarn = { fg = "#ff8800" },
 	DiagnosticWarning = { fg = "#ff8800" },
 	DiagnosticInformation = { fg = "#ffcc66" },
@@ -172,8 +172,8 @@ local P = {
 	TelescopeSelection = { link = "PmenuSel" },
 	TelescopeSelectionCaret = { fg = "#015A60" },
 	TelescopeMultiSelection = { bold = true, fg = "Gold1" },
-	TelescopeNormal = { link = "Normal" },
-	TelescopeBorder = { link = "WinSeparator" },
+	TelescopeNormal = { link = "NormalFloat" },
+	TelescopeBorder = { link = "FloatBorder" },
 	TelescopePromptBorder = base.Title,
 	TelescopeResultsBorder = { link = "WinSeparator" },
 	TelescopePreviewBorder = { link = "WinSeparator" },
@@ -299,6 +299,7 @@ local P = {
 	NavicIconsText = { link = "CmpItemKindText" },
 
 	-- Ufo (Folding)
+   UfoPreviewCursorsLine = { link = "Normal" },
 	UfoPreviewSbar = { link = "PmenuSbar" },
 	UfoPreviewThumb = { link = "PmenuThumb" },
 	UfoFoldedEllipsis = { link = "Comment" },
