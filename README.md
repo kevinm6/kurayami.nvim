@@ -1,14 +1,23 @@
-# Knvim-theme for Neovim
+# Kurayami Theme for Neovim
+
+<!--toc:start-->
+- [Kurayami Theme for Neovim](#kurayami-theme-for-neovim)
+  - [📄 Requirements](#📄-requirements)
+  - [🏞️ Preview](#🏞️-preview)
+  - [⬇ Installation](#installation)
+<!--toc:end-->
 
 ---
 
-> Support most of the plugins for Neovim
+> Support most of the plugins for Neovim  
+> All the syntax highglights is managed by [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)  
+> (so there are no specific syntax highlights, only via ts-nodes)
 
 ---
 
 ## 📄 Requirements
 
-> Neovim >= 7.0
+> Neovim >= 0.9
 
 ---
 
@@ -25,24 +34,27 @@
 [Lazy](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-  {
-   "kevinm6/knvim-theme.nvim",
-    lazy = false,          -- don't lazy load
-    priority = 100,        -- give high priority to be loaded before others plugin
-    config = function()
-      local has_theme, knvim = pcall(require, "knvim")
-      if not has_theme then print("Error loading theme < knvim >", knvim) end
+{
+   "kevinm6/kurayami.nvim",
+   event = "VimEnter",               -- load plugin on VimEnter or
+   -- lazy = false,                  --   don't lazy load plugin
+   priority = 1000,                  
+   config = function()        
+      vim.cmd.colorscheme('kurayami')   -- this is enough to initialize and load plugin
+   end,
 
-      require "knvim".setup()
-    end
-  }
+   ---Use this config to override some highlights
+   -- config = function(_, opts)        
+      ---override highlights passing table
+      ---@usage
+      -- opts.override = {
+      --  Number = { fg = "#015a60" }
+      -- }
+      -- require("kurayami").setup(opts)
+   -- end
+}
 ```
 
-[Packer](https://github.com/wbthomason/packer.nvim)
-
-```lua
-use 'kevinm6/knvim-theme.nvim'
-```
 ---
 
 > ⚙️ Configuration
