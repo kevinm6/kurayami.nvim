@@ -1,14 +1,16 @@
-# Knvim-theme for Neovim
+# K-theme for Neovim
 
 ---
 
-> Support most of the plugins for Neovim
+> Support most of the plugins for Neovim  
+> All the syntax highglights is managed by [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)  
+> (so there are no specific syntax highlights, only via ts-nodes)
 
 ---
 
 ## 📄 Requirements
 
-> Neovim >= 7.0
+> Neovim >= 0.9
 
 ---
 

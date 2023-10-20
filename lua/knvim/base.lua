@@ -5,16 +5,14 @@
 --  Last Modified: 08 Sep 2023, 18:36
 -------------------------------------
 
-local colors = require("knvim.colors")
 
-local fg0 = colors.light0
-
-local red = colors.bright_red
-local green = colors.bright_green
-local yellow = colors.bright_yellow
-local blue = colors.bright_blue
-local purple = colors.bright_purple
-local aqua = colors.bright_aqua
+local red = "#fb4934"
+local green = "#36f57a"
+local yellow = "#fabd2f"
+local blue = "#83a598"
+local purple = "#d3869b"
+local aqua = "#8ec07c"
+local orange = "#fe8019"
 
 local bg = vim.opt.background:get()
 if bg == nil then
@@ -44,7 +42,7 @@ vim.g.colors_name = "k_theme"
 
 local base_group = {
 	-- Modes
-	Normal = { fg = "#D0D0D0", bg = colors.dark0 },
+	Normal = { fg = "#D0D0D0", bg = "#1c1c1c" },
 	Visual = { reverse = true },
 	-- Selection Not-Owned by Vim
 	VisualNOS = { fg = "#244E7A" },
@@ -65,7 +63,7 @@ local base_group = {
 
 	-- Cursor
 	Cursor = { reverse = true },
-	LineNr = { fg = "#626262", bg = colors.dark0 },
+	LineNr = { fg = "#626262", bg = "#1c1c1c" },
 	Cursorline = { bg = "grey15" },
 	CursorLineNr = { fg = green, bold = true },
 	lCursor = { fg = red },
@@ -77,7 +75,7 @@ local base_group = {
 	TextYankPost = { reverse = true },
 
 	-- Split
-	VertSplit = { bg = colors.dark0, fg = fg0 },
+	VertSplit = { bg = "#1c1c1c", fg = "#fbf1c7" },
 
 	-- Folding
 	Folded = { bg = "grey13", fg = "Grey40" },
@@ -148,8 +146,8 @@ local base_group = {
 	Italic = { italic = true },
 
 	-- End of buffer and non-text
-	NonText = { fg = "#626262", bg = colors.dark0 },
-	EndOfBuffer = { fg = colors.dark0, bg = colors.dark0 },
+	NonText = { fg = "#626262", bg = "#1c1c1c" },
+	EndOfBuffer = { fg = "#1c1c1c", bg = "#1c1c1c" },
 
 	Ignore = { fg = "#5f5faf", bold = true },
 	MatchParen = { fg = "#09ddd0" },
@@ -169,7 +167,7 @@ local base_group = {
 	-- diffNewFile = { fg = yellow },
 	-- diffLine = { fg = blue },
 
-	SignColumn = { fg = "#626262", bg = colors.dark0 },
+	SignColumn = { fg = "#626262", bg = "#1c1c1c" },
 
 	-- Errors
 	Error = { fg = "#DC2626", underline = true },
@@ -184,7 +182,7 @@ local base_group = {
 	PmenuThumb = { bg = "#3D3D40" },
 
 	-- LSP
-	LspCodeLens = { fg =  colors.gray },
+	LspCodeLens = { fg =  "#808080"},
 	LspReferenceText = { bg = "#3c3c3c" },
 	LspCodeLensSeparator = { link = "@comment" },
 	LspReferenceWrite = { fg = "#F1F1F1", bg = "#015A60" },
@@ -215,9 +213,9 @@ local base_group = {
 	gitcommitDiscardedFile = { fg = red },
 
 	-- checkhealth
-	healthError = { bg = colors.dark0, fg = red },
-	healthSuccess = { bg = colors.dark0, fg = green },
-	healthWarning = { bg = colors.dark0, fg = yellow },
+	healthError = { bg = "#1c1c1c", fg = red },
+	healthSuccess = { bg = "#1c1c1c", fg = green },
+	healthWarning = { bg = "#1c1c1c", fg = yellow },
 }
 
 return base_group

@@ -5,9 +5,9 @@
 --  Last Modified: 04 Sep 2023, 11:26
 -------------------------------------
 
-local base = require("knvim.base")
+local base = require "knvim.base"
 
-local P = {
+local M = {
 	-- Alpha
 	AlphaHeader = { fg = "#016A60" },
 	AlphaButtons = { link = "Keyword" },
@@ -362,4 +362,4 @@ local P = {
 	IndentBlanklineIndent6 = { fg = "#3c3c3c" },
 }
 
-return P
+return M
