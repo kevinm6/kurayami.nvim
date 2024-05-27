@@ -5,16 +5,22 @@
 --- Last Modified: 01 Jan 2024, 16:33
 -------------------------------------
 
-local red = "#fb4934"
-local green = "#36f57a"
-local yellow = "#fabd2f"
-local blue = "#83a598"
-local purple = "#d3869b"
-local aqua = "#8ec07c"
-local orange = "#fe8019"
+local default = setmetatable({
+  red = "#fb4934",
+  green = "#36f57a",
+  yellow = "#fabd2f",
+  blue = "#83a598",
+  purple = "#d3869b",
+  aqua = "#8ec07c",
+  orange = "#fe8019",
+}, {
+    __index = function()
+      return "#fff"
+    end
+  })
 
 
-local theme = {
+return {
   ---Modes
   Normal = { fg = "#D0D0D0", bg = "#1c1c1c" },
   Visual = { reverse = true },
@@ -39,9 +45,9 @@ local theme = {
   Cursor = { reverse = true },
   LineNr = { fg = "#626262", bg = "#1c1c1c" },
   Cursorline = { bg = "grey15" },
-  CursorLineNr = { fg = green, bold = true },
-  lCursor = { fg = red },
-  iCursor = { fg = aqua },
+  CursorLineNr = { fg = default.green, bold = true },
+  lCursor = { fg = default.default.red },
+  iCursor = { fg = default.default.aqua },
   vCursor = { link = "Cursor" },
   CursorIM = { link = "Cursor" },
   CursorColumn = { link = "CursorLine" },
@@ -54,21 +60,21 @@ local theme = {
   ---Folding
   Folded = { bg = "grey13", fg = "Grey40" },
   FoldColumn = { link = "Comment" },
-  Conceal = { fg = blue },
+  Conceal = { fg = default.blue },
 
   ---Search
-  IncSearch = { fg = "#3a3a3a", bg = green, bold = true },
+  IncSearch = { fg = "#3a3a3a", bg = default.green, bold = true },
   Search = { reverse = true },
   QuickFixLine = { reverse = true },
 
   ---Debugging
-  Debug = { fg = red },
+  Debug = { fg = default.red },
 
   ---StatusLine
   StatusLine = { fg = "#626262", bg = "#1c1c1c" },
   StatusLineNC = { fg = "#868686", bg = "#1c1c1c" },
-  WinBar = { fg = "#6c6c6c", bg = "#1c1c1c", italic = true },
-  WinBarNC = { fg = "#3c3c3c", bg = "#1c1c1c" },
+  WinBar = { fg = "#6c6c6c", bg = "#1c1c1c", bold = false },
+  WinBarNC = { fg = "#3c3c3c", bg = "#1c1c1c", italic = true },
 
   ---Nvim Modes
   Nmode = { fg = "#158C8A" },
@@ -111,7 +117,7 @@ local theme = {
   Tag = { fg = "#569CD6" },
   Delimiter = { fg = "#d7d787" },
   SpecialComment = { fg = "#6C7986" },
-  Todo = { bg = "#d7ff00", fg = "#ff5f00" },
+  Todo = { bg =  "#4FC1FF" },
   Character = { fg = "#acacac" },
   Float = { fg = "#00ccaa" },
   StorageClass = { fg = "#ffaf16" },
@@ -136,12 +142,12 @@ local theme = {
   DiffChange = { bg = "#2c2c2c" },
   DiffDelete = { fg = "#ff8080" },
   DiffText = { fg = "gold" },
-  -- diffAdded = { fg = green },
-  -- diffRemoved = { fg = red },
-  -- diffChanged = { fg = aqua },
+  -- diffAdded = { fg = default.green },
+  -- diffRemoved = { fg = default.red },
+  -- diffChanged = { fg = default.aqua },
   -- diffFile = { fg = orange },
-  -- diffNewFile = { fg = yellow },
-  -- diffLine = { fg = blue },
+  -- diffNewFile = { fg = default.yellow },
+  -- diffLine = { fg = default.blue },
 
   SignColumn = { fg = "#626262", bg = "#1c1c1c" },
 
@@ -159,27 +165,27 @@ local theme = {
 
 
   ---Spell
-  SpellRare = { fg = purple, underline = true },
-  SpellBad = { fg = red, underline = true },
-  SpellLocal = { fg = aqua, underline = true },
+  SpellRare = { fg = default.purple, underline = true },
+  SpellBad = { fg = default.red, underline = true },
+  SpellLocal = { fg = default.aqua, underline = true },
   SpellCap = vim.g.k_theme_improved_warnings and {
-    fg = green,
+    fg = default.green,
     bold = true,
     italic = true,
-    } or { fg = blue, underline = true },
+    } or { fg = default.blue, underline = true },
 
   ---signature
-  SignatureMarkText = { link = "blue" },
-  SignatureMarkerText = { link = "purple" },
+  SignatureMarkText = { link = "default.blue" },
+  SignatureMarkerText = { link = "default.purple" },
 
   ---gitcommit
-  gitcommitSelectedFile = { fg = green },
-  gitcommitDiscardedFile = { fg = red },
+  gitcommitSelectedFile = { fg = default.green },
+  gitcommitDiscardedFile = { fg = default.red },
 
   ---checkhealth
-  healthError = { bg = "#1c1c1c", fg = red },
-  healthSuccess = { bg = "#1c1c1c", fg = green },
-  healthWarning = { bg = "#1c1c1c", fg = yellow },
+  healthError = { bg = "#1c1c1c", fg = default.red },
+  healthSuccess = { bg = "#1c1c1c", fg = default.green },
+  healthWarning = { bg = "#1c1c1c", fg = default.yellow },
 
   ---Diagnostic
   DiagnosticError = { fg = "#f44747" },
@@ -364,7 +370,7 @@ local theme = {
   NavicIconsText = { link = "CmpItemKindText" },
 
   ---Noice
-  ---@url https://github.com/nvim-tree/nvim-tree.lua
+  ---@url https://github.com/folke/noice.nvim
   NoiceCmdline = { link = "MsgArea" },
   NoiceCmdlineIcon = { link = "DiagnosticSignInfo" },
   NoiceCmdlineIconSearch = { link = "DiagnosticSignWarn" },
@@ -415,34 +421,19 @@ local theme = {
   ---@url https://github.com/nvim-telescope/telescope.lua
   TelescopeSelection = { link = "PmenuSel" },
   TelescopeSelectionCaret = { fg = "#015A60" },
-  TelescopeMultiSelection = { bold = true, fg = "Gold1" },
+  TelescopeMultiSelection = { fg = default.orange },
   TelescopeNormal = { link = "NormalFloat" },
-  TelescopeBorder = { link = "FloatBorder" },
-  TelescopePromptBorder = { link = "Title" },
+  TelescopeBorder = { fg = "#dcdcdc", bold = true },
+  TelescopePromptBorder = { fg = "#04868e" },
   TelescopeResultsBorder = { link = "WinSeparator" },
   TelescopePreviewBorder = { link = "WinSeparator" },
-  TelescopeMatching = { link = "CmpItemAbbrMatch" },
-  TelescopePromptPrefix = { fg = "#36FF5A" },
+  TelescopeMatching = { fg = default.orange, bold = true },
+  TelescopePromptPrefix = { fg = "#4c4c4c" },
   TelescopePrompt = { link = "TelescopeNormal" },
   TelescopeResultsDiffAdd = { link = "DiffAdd" },
   TelescopeResultsDiffChange = { link = "DiffChange" },
   TelescopeResultsDiffDelete = { link = "DiffDelete" },
   TelescopeResultsDiffUntracked = { link = "Ignore" },
-
-  ---Nvim-Tree
-  ---@url https://github.com/nvim-tree/nvim-tree.lua
-  -- NvimTreeSymlink = { link = "Function" },
-  -- NvimTreeFolderName = { link = "Normal" },
-  -- NvimTreeRootFolder = { link = "Type" },
-  -- NvimTreeFolderIcon = { fg = "#00afd7" },
-  -- NvimTreeFileIcon = { link = "Type" },
-  -- NvimTreeEmptyFolderName = { link = "Comment" },
-  -- NvimTreeOpenedFolderName = { link = "Directory" },
-  -- NvimTreeExecFile = { link = "Underlined" },
-  -- NvimTreeOpenedFile = { bold = true, underline = true },
-  -- NvimTreeSpecialFile = { fg = "#afaf00", bold = true, italic = true },
-  -- NvimTreeImageFile = { link = "Label" },
-  -- NvimTreeIndentMarker = { link = "Comment" },
 
   ---TreeSitter
   ---@url https://github.com/nvim-treesitter/nvim-treesitter
@@ -459,10 +450,14 @@ local theme = {
   ["@text.strong"] = { bold = true },
   ["@text.emphasis"] = { italic = true },
   ["@text.underline"] = { underline = true },
-  ["@text.todo"] = { link = "Todo" },
-  ["@text.note"] = { link = "SpecialComment" },
-  ["@text.warning"] = { link = "Todo" },
-  ["@text.danger"] = { link = "WarningMsg" },
+  ["@text.todo"] = { fg = "#1c1c1c", bg = "#4FC1FF" },
+  ["@text.note"] = { fg = "#1c1c1c", bg = "#ffcc66" },
+  ["@text.warning"] = { fg = "#1c1c1c", bg = "#ff8800" },
+  ["@text.danger"] = { fg = "#1c1c1c", bg = "#f44747" },
+  ["@comment.todo.comment"] = { link = "@text.todo" },
+  ["@comment.note.comment"] = { link = "@text.note" },
+  ["@comment.warning.comment"] = { link = "@text.warning" },
+  ["@comment.error.comment"] = { link = "@text.danger" },
   ["@variable"] = { fg = "#2d5d79" },
   ["@punctuation.delimiter"] = { link = "Delimiter" },
   ["@punctuation.bracket"] = { link = "Delimiter" },
@@ -544,5 +539,3 @@ local theme = {
   WhichKeyBorder = { link = "FloatBorder" },
   WhichKeyValue = { link = "Comment" },
 }
-
-return theme
