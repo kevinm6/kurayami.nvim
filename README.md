@@ -4,7 +4,8 @@
 - [Kurayami Theme for Neovim](#kurayami-theme-for-neovim)
   - [📄 Requirements](#📄-requirements)
   - [🏞️ Preview](#🏞️-preview)
-  - [⬇ Installation](#installation)
+  - [⬇ Install](#install)
+    - [Config](#config)
 <!--toc:end-->
 
 ---
@@ -29,7 +30,7 @@
 
 ---
 
-## ⬇ Installation
+## ⬇ Install
 
 [Lazy](https://github.com/wbthomason/packer.nvim)
 
@@ -42,22 +43,35 @@
    config = function()        
       vim.cmd.colorscheme('kurayami')   -- this is enough to initialize and load plugin
    end,
+}
+```
 
+### Config
+
+Example to set custom colors to override existing one or to add some missing.
+
+```lua
+   "kevinm6/kurayami.nvim",
+   event = "VimEnter",               -- load plugin on VimEnter or
+   -- lazy = false,                  --   don't lazy load plugin
+   priority = 1000,                  
    ---Use this config to override some highlights
-   -- config = function(_, opts)        
-      ---override highlights passing table
-      ---@usage
-      -- opts.override = {
-      --  Number = { fg = "#015a60" }
-      -- }
-      -- require("kurayami").setup(opts)
-   -- end
+   config = function(_, opts)        
+     ---override or add highlights passing table, same as `:h nvim_set_hl()`
+     ---@usage
+     opts.override = {
+       Number = { fg = "#015a60", bg = "NONE", bold = true },
+       -- HiGroup = { fg = "#HexCol", bg = "#HexCol" }
+     }
+     require("kurayami").setup(opts)
+     vim.cmd.colorscheme('kurayami')
+   end
 }
 ```
 
 ---
 
-> ⚙️ Configuration
-> *this is my personal configuration, the one that appears in the preview*
+> ⚙️ Config
+> *this is my personal config, the one that appears in the preview*
 >
 > [Neovim Configuration](https://github.com/kevinm6/nvim)
