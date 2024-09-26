@@ -2,7 +2,7 @@
 --- File         : theme.lua
 --- Description  : color palette for kurayami colorscheme
 --- Author       : Kevin
---- Last Modified: 13 Jul 2024, 12:43
+--- Last Modified: 18 Jul 2024, 08:58
 -------------------------------------
 
 local default = setmetatable({
@@ -15,7 +15,7 @@ local default = setmetatable({
 	orange = "#fe8019",
 }, {
 	__index = function()
-		return "#fff"
+		return "#bbbbbb"
 	end,
 })
 
@@ -38,7 +38,7 @@ return {
 	MoreMsg = {},
 	MsgArea = { fg = "#626262" },
 
-	colorColumn = { bg = "#3c3c3c" },
+	ColorColumn = { bg = "#202020" },
 
 	---Cursor
 	Cursor = { reverse = true },
@@ -164,6 +164,9 @@ return {
 	PmenuMatch = { fg = "#40CC7C" },
 	PmenuMatchSel = { fg = default.yellow },
 
+	---Snippet
+	SnippetTabstop = { italic = true, underline = true },
+
 	---Spell
 	SpellRare = { fg = default.purple, underline = true },
 	SpellBad = { fg = default.red, underline = true },
@@ -218,7 +221,7 @@ return {
 
 	---LSP
 	---@url https://github.com/neovim/nvim-lspconfig
-	LspCodeLens = { fg = "#808080" },
+	LspCodeLens = { fg = "#6D7986" },
 	LspReferenceText = { bg = "#3c3c3c" },
 	LspCodeLensSeparator = { link = "@comment" },
 	LspReferenceWrite = { fg = "#F1F1F1", bg = "#015A60" },
@@ -327,35 +330,35 @@ return {
 
 	---Navic (winbar plugin)
 	---@url https://github.com/SmiteshP/nvim-navic
-	NavicText = { link = "Comment" },
-	NavicSeparator = { link = "Comment" },
-	NavicIconsFile = { link = "CmpItemKindFile" },
-	NavicIconsModule = { link = "CmpItemKindClass" },
-	NavicIconsNamespace = { link = "CmpItemKindClass" },
-	NavicIconsPackage = { link = "CmpItemKindProperty" },
-	NavicIconsClass = { link = "CmpItemKindClass" },
-	NavicIconsMethod = { link = "CmpItemKindMethod" },
-	NavicIconsProperty = { link = "CmpItemKindProperty" },
-	NavicIconsField = { link = "CmpItemKindField" },
-	NavicIconsConstructor = { link = "CmpItemKindConstructor" },
-	NavicIconsEnum = { link = "CmpItemKindValue" },
-	NavicIconsInterface = { link = "CmpItemKindInterface" },
-	NavicIconsFunction = { link = "CmpItemKindFunction" },
-	NavicIconsVariable = { default = true, link = "CmpItemKindVariable" },
-	NavicIconsConstant = { link = "CmpItemKindVariable" },
-	NavicIconsString = { link = "CmpItemKindText" },
-	NavicIconsNumber = { link = "CmpItemKindValue" },
-	NavicIconsBoolean = { link = "CmpItemKindValue" },
-	NavicIconsArray = { link = "CmpItemKindVariable" },
-	NavicIconsObject = { link = "CmpItemKindVariable" },
-	NavicIconsKey = { link = "CmpItemKindKeyword" },
-	NavicIconsNull = { link = "TSNone" },
-	NavicIconsEnumMember = { link = "CmpItemKindVariable" },
-	NavicIconsStruct = { link = "CmpItemKindStruct" },
-	NavicIconsEvent = { link = "CmpItemKindEvent" },
-	NavicIconsOperator = { link = "CmpItemKindOperator" },
-	NavicIconsTypeParameter = { link = "CmpItemKindTypeParameter" },
-	NavicIconsText = { link = "CmpItemKindText" },
+	-- NavicText = { link = "Comment" },
+	-- NavicSeparator = { link = "Comment" },
+	-- NavicIconsFile = { link = "CmpItemKindFile" },
+	-- NavicIconsModule = { link = "CmpItemKindClass" },
+	-- NavicIconsNamespace = { link = "CmpItemKindClass" },
+	-- NavicIconsPackage = { link = "CmpItemKindProperty" },
+	-- NavicIconsClass = { link = "CmpItemKindClass" },
+	-- NavicIconsMethod = { link = "CmpItemKindMethod" },
+	-- NavicIconsProperty = { link = "CmpItemKindProperty" },
+	-- NavicIconsField = { link = "CmpItemKindField" },
+	-- NavicIconsConstructor = { link = "CmpItemKindConstructor" },
+	-- NavicIconsEnum = { link = "CmpItemKindValue" },
+	-- NavicIconsInterface = { link = "CmpItemKindInterface" },
+	-- NavicIconsFunction = { link = "CmpItemKindFunction" },
+	-- NavicIconsVariable = { default = true, link = "CmpItemKindVariable" },
+	-- NavicIconsConstant = { link = "CmpItemKindVariable" },
+	-- NavicIconsString = { link = "CmpItemKindText" },
+	-- NavicIconsNumber = { link = "CmpItemKindValue" },
+	-- NavicIconsBoolean = { link = "CmpItemKindValue" },
+	-- NavicIconsArray = { link = "CmpItemKindVariable" },
+	-- NavicIconsObject = { link = "CmpItemKindVariable" },
+	-- NavicIconsKey = { link = "CmpItemKindKeyword" },
+	-- NavicIconsNull = { link = "TSNone" },
+	-- NavicIconsEnumMember = { link = "CmpItemKindVariable" },
+	-- NavicIconsStruct = { link = "CmpItemKindStruct" },
+	-- NavicIconsEvent = { link = "CmpItemKindEvent" },
+	-- NavicIconsOperator = { link = "CmpItemKindOperator" },
+	-- NavicIconsTypeParameter = { link = "CmpItemKindTypeParameter" },
+	-- NavicIconsText = { link = "CmpItemKindText" },
 
 	---Noice
 	---@url https://github.com/folke/noice.nvim
