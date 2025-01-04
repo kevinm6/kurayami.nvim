@@ -232,6 +232,7 @@ return {
 	LspInfoList = { link = "Function" },
 	LspInfoBorder = { fg = "#3D3D40" },
 	LspInfoTip = { link = "Comment" },
+	LspSignatureActiveParameter = { reverse = true, underline = true },
 	LspDiagnosticsError = { fg = "#f44747", bg = "NONE" },
 	LspDiagnosticsWarning = { fg = "#ff8800", bg = "NONE" },
 	LspDiagnosticsInfo = { fg = "#ff8800", bg = "NONE" },
@@ -265,6 +266,10 @@ return {
 
 	---Blink.Cmp
 	---@url https://github.com/Saghen/blink.cmp
+	BlinkCmpMenu = { bg = "#242424" },
+	BlinkCmpMenuBorder = { bg = "#242424" },
+	BlinkCmpDoc = { bg = "#242424" },
+	BlinkCmpDocBorder = { bg = "#242424" },
 	BlinkCmpLabel = { fg = "#A1A1A1" },
 	BlinkCmpLabelMatch = { fg = "#40CC7C" },
 	BlinkCmpLabelDetail = { link = "Special" },
