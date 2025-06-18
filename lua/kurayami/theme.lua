@@ -163,6 +163,7 @@ return {
 	PmenuThumb = { bg = "NONE" },
 	PmenuMatch = { fg = "#40CC7C" },
 	PmenuMatchSel = { fg = default.yellow },
+	PmenuKind = { link = "Type" },
 
 	---Snippet
 	SnippetTabstop = { italic = true, underline = true },
@@ -439,6 +440,16 @@ return {
 	NoiceSplit = { link = "NormalFloat" },
 	NoiceSplitBorder = { link = "FloatBorder" },
 	NoiceVirtualText = { link = "DiagnosticVirtualTextInfo" },
+
+	---Snacks
+	---@url https://github.com/folke/snacks.nvim
+	SnacksDashboardHeader = { link = "Type" },
+	SnacksDashboardFooter = { link = "Comment" },
+	SnacksDashboardTitle = { link = "Type" },
+	SnacksDashboardIcon = { link = "Function" },
+	SnacksDashboardDesc = { link = "SnacksDashboardNormal" },
+
+	SnacksPickerMatch = { fg = default.orange, bold = true },
 
 	---Telescope
 	---@url https://github.com/nvim-telescope/telescope.lua
