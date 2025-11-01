@@ -2,7 +2,7 @@
 --- File         : theme.lua
 --- Description  : color palette for kurayami colorscheme
 --- Author       : Kevin
---- Last Modified: 18 Jul 2024, 08:58
+--- Last Modified: 01/11/2025, 16:26
 -------------------------------------
 
 local default = setmetatable({
@@ -64,7 +64,7 @@ return {
 	---Search
 	IncSearch = { fg = "#3a3a3a", bg = default.green, bold = true },
 	Search = { reverse = true },
-	QuickFixLine = { reverse = true },
+	QuickFixLine = { bg = "grey15" },
 
 	---Debugging
 	Debug = { fg = default.red },
@@ -166,7 +166,7 @@ return {
 	PmenuKind = { link = "Type" },
 
 	---Snippet
-	SnippetTabstop = { italic = true, underline = true },
+	SnippetTabstop = { italic = true },
 
 	---Spell
 	SpellRare = { fg = default.purple, underline = true },
@@ -565,4 +565,14 @@ return {
 	WhichKeyFloat = { bg = "#1c1c1c" },
 	WhichKeyBorder = { link = "FloatBorder" },
 	WhichKeyValue = { link = "Comment" },
+  
+	---Clues
+	---@url https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-clue.md
+   MiniClueBorder = { link = "FloatBorder" },
+   MiniClueDescGroup = { link = "Type" },
+   -- MiniClueDescSingle = { link = "Identifier" },
+   MiniClueNextKey = { },
+   -- MiniClueNextKeyWithPostkeys = { },
+   MiniClueSeparator = { link = "DiffAdded" },
+   MiniClueTitle = { link = "Function" },
 }
